@@ -43,10 +43,3 @@ jobs:
       languages: ${{ inputs.languages }}
       build_mode: ${{ inputs.build_mode }}
       runner: ${{ inputs.runner || 'ubuntu-latest' }}
-
-  build-check:
-    if: contains(inputs.workflows_to_run, 'build-check') || contains(inputs.workflows_to_run, 'all')
-    uses: ./.github/workflows/bundlemon-build-size.yml
-    with:
-      branch_name: ${{ inputs.bundlemonrc_branch_name }}
-      runner: ${{ inputs.runner || (github.event.repository.private && 'self-hosted') || 'ubuntu-latest' }}
