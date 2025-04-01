@@ -15,7 +15,8 @@ export function Dhis2App(_props: {}) {
         getData().then(setCompositionRootRes);
     }, []);
 
-    const uid = getUid("dhis2-app", "dhis2-app");
+    const randomId = Math.random().toString();
+    const uid = getUid("dhis2-app", randomId + "ACTUAL");
 
     switch (compositionRootRes.type) {
         case "loading":
