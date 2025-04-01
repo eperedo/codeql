@@ -4,9 +4,9 @@ import { Provider } from "@dhis2/app-runtime";
 import { D2Api } from "$/types/d2-api";
 import App from "./App";
 import { CompositionRoot, getWebappCompositionRoot } from "$/CompositionRoot";
-import { getUid, getUid2 } from "$/utils/uid";
+import { getUid2 } from "$/utils/uid";
 
-console.log("getUid", getUid("dhis2-app"));
+// console.log("getUid", getUid("dhis2-app"));
 console.log("getUid2", getUid2("dhis2-app", "dhis2-app"));
 
 export function Dhis2App(_props: {}) {
