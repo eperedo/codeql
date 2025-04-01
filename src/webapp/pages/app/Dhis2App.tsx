@@ -4,11 +4,14 @@ import { Provider } from "@dhis2/app-runtime";
 import { D2Api } from "$/types/d2-api";
 import App from "./App";
 import { CompositionRoot, getWebappCompositionRoot } from "$/CompositionRoot";
+import { getUid } from "$/utils/uid";
 
 export function Dhis2App(_props: {}) {
     const [compositionRootRes, setCompositionRootRes] = React.useState<CompositionRootResult>({
         type: "loading",
     });
+
+    const uid = getUid("dhis2", "webapp");
 
     React.useEffect(() => {
         getData().then(setCompositionRootRes);
@@ -16,7 +19,7 @@ export function Dhis2App(_props: {}) {
 
     switch (compositionRootRes.type) {
         case "loading":
-            return <h3>Loading...</h3>;
+            return <h3>Loading... {uid}</h3>;
         case "error": {
             const { baseUrl, error } = compositionRootRes.error;
             return (
