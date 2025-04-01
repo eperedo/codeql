@@ -28,6 +28,7 @@
         "d2-manifest": "1.0.0",
         "eslint-plugin-no-relative-import-paths": "^1.5.3",
         "font-awesome": "4.7.0",
+        "md5.js": "1.3.5",
         "purify-ts": "1.2.0",
         "purify-ts-extra-codec": "0.6.0",
         "react": "^18.2.0",
@@ -37,9 +38,11 @@
         "styled-components": "6.1.11",
         "styled-jsx": "^5.1.6",
         "typed-immutable-map": "^0.1.1",
-        "zustand": "^4.3.7"
+        "zustand": "^4.3.7",
+        "md5": "^2.2.1"
     },
     "devDependencies": {
+        "@types/md5": "2.2.1",
         "@babel/core": "^7.0.0-0",
         "@babel/plugin-syntax-flow": "^7.14.5",
         "@babel/plugin-transform-react-jsx": "^7.14.9",
