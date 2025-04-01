@@ -1,6 +1,7 @@
 import { command, run, string, option } from "cmd-ts";
 import path from "path";
 import { D2Api } from "$/types/d2-api";
+import { generateUid, getUid } from "$/utils/uid";
 
 function main() {
     const cmd = command({
@@ -17,7 +18,9 @@ function main() {
         handler: async args => {
             const api = new D2Api({ baseUrl: args.url });
             const info = await api.system.info.getData();
+            const dataSetActualId = getUid("dataSet", info.revision + "ACTUAL");
             console.debug(info);
+            return dataSetActualId;
         },
     });
 
